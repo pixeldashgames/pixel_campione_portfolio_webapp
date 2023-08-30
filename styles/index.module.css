@@ -1,0 +1,101 @@
+.navbar {
+    background-color: rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    height: 70px;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbarLinks {
+    display: flex;
+    /*place them from the right*/
+    margin-left: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    justify-content: space-around;
+    list-style: none;
+}
+
+.sections {
+    text-align: center;
+    position: center;
+}
+
+.navbarLinks a {
+    font-weight: 325;
+    font-family: var(--font-mono);
+    color: var(--secondary-color);
+}
+
+@media screen and (min-width: 701px) {
+    .navbarLinks a {
+        font-size: var(--small-font-size);
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .navbarLinks a {
+        font-size: var(--small-responsive-font-size);
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+}
+
+.navbar img {
+    margin-left: 40px;
+}
+
+.subtitle {
+    font-family: var(--font-titles);
+    font-size: 2.6vw;
+    font-weight: 400;
+    color: var(--accent-color);
+}
+
+.text {
+    font-family: var(--font-mono);
+    font-size: 1.5vw;
+    font-weight: 350;
+    color: var(--secondary-color);
+}
+
+.aboutText {
+    line-height: 1.65;
+    margin-top: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.about {
+    margin-top: 200px;
+}
+
+.home {
+    padding-top: 200px;
+}
+
+.mainTitle {
+    font-family: var(--font-titles);
+    font-size: 8vw;
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--accent-color);
+}
+
+.mainSubTitle {
+    margin-top: 10px;
+    font-family: var(--font-mono);
+    font-size: 2.5vw;
+    font-weight: 350;
+    color: var(--secondary-color);
+}
+
+.projects {
+    margin-top: 200px;
+}

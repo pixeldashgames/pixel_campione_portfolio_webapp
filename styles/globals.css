@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Fira Code";
+  src: url("../fonts/Fira Code.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Harabara";
+  src: url("../fonts/Harabara.ttf") format("truetype");
+}
+
+:root {
+  --max-width: 1920px;
+  --border-radius: 12px;
+  --font-mono: "Fira Code", ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+  'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+  'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-titles: "Harabara", sans-serif;
+  --small-responsive-font-size: 3vw;
+  --small-font-size: 20px;
+  --primary-color: #0B3E4B;
+  --secondary-color: #C9F2F9;
+  --accent-color: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background-image: url("../public/background2.png");
+  background-size: 101%;
+  background-position: top center;
+  background-repeat: repeat;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
