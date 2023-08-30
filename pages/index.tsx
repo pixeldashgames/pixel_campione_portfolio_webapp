@@ -64,9 +64,10 @@ export default function Index() {
 
 function ProjectsList() {
     const [data, setData] = useState([]);
-    const URL = process.env.BACKEND_URL || "https://pro-opossum-rapid.ngrok-free.app/";
+    const URL = process.env.BACKEND_URL;
+    console.log(URL);
     useEffect(() => {
-        axios.get(URL+"/projects/").then(response => setData(response.data)).catch(error => console.log(error))
+        axios.get(URL+"projects/").then(response => setData(response.data)).catch(error => console.log(error))
     })
     return (
         <div className={styles.projects}>
