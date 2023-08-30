@@ -61,7 +61,6 @@ export default function Index() {
     )
 }
 
-const URL = process.env.BACKENDURL || "https://pro-opossum-rapid.ngrok-free.app/"
 
 function ProjectsList() {
     const [data, setData] = useState([])
@@ -73,6 +72,7 @@ function ProjectsList() {
             }
         }).then(response => setData(response.data)).catch(error => console.log(error))
     })
+    const URL = process.env.BACKEND_URL || "https://pro-opossum-rapid.ngrok-free.app/";
     return (
         <div className={styles.projects}>
             {data.map((project: Project) =>
