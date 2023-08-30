@@ -64,7 +64,7 @@ export default function Index() {
 
 function ProjectsList() {
     const [data, setData] = useState([]);
-    const URL = process.env.BACKEND_URL;
+    const URL = "https://pixel-campione-portfolio-back-de4b8d98e131.herokuapp.com/";
     console.log(URL);
     useEffect(() => {
         axios.get(URL+"projects/").then(response => setData(response.data)).catch(error => console.log(error))
