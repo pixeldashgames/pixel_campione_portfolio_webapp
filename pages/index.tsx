@@ -63,16 +63,11 @@ export default function Index() {
 
 
 function ProjectsList() {
-    const [data, setData] = useState([])
-    useEffect(() => {
-        axios.get(URL, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            }
-        }).then(response => setData(response.data)).catch(error => console.log(error))
-    })
+    const [data, setData] = useState([]);
     const URL = process.env.BACKEND_URL || "https://pro-opossum-rapid.ngrok-free.app/";
+    useEffect(() => {
+        axios.get(URL+"/projects/").then(response => setData(response.data)).catch(error => console.log(error))
+    })
     return (
         <div className={styles.projects}>
             {data.map((project: Project) =>
