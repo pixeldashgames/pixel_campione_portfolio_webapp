@@ -159,7 +159,11 @@ function ProjectsList() {
     const [data, setData] = useState([]);
     const URL = "https://pixel-campione-portfolio-back-de4b8d98e131.herokuapp.com/";
     console.log(URL);
-    axios.get(URL+"projects/").then(response => setData(response.data)).catch(error => console.log(error))
+    useEffect(() => {
+        axios.get(URL+"projects/")
+            .then(response => setData(response.data))
+            .catch(error => console.log(error));
+    },[])
     return (
         <div className={styles.projectList}>
             {data.map((project: Project) =>
