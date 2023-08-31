@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {ChangeEvent, MouseEventHandler, useEffect, useState} from 'react';
 import styles from "../styles/index.module.css";
 import Layout from "../components/layout"
 import Image from "next/image";
@@ -6,6 +6,22 @@ import axios from 'axios'
 import {Project} from "@/project";
 
 export default function Index() {
+    const [nameInput,SetNameInput] = useState('');
+    const [emailInput,SetEmailInput] = useState('');
+    const [messageInput,SetMessageInput] = useState('');
+
+    const handleNameInputChange=(event:ChangeEvent<HTMLInputElement>)=>{
+        SetNameInput(event.target.value);
+    }
+    const handleEmailInputChange=(event:ChangeEvent<HTMLInputElement>)=>{
+        SetEmailInput(event.target.value);
+    }
+    const handleMessageInputChange=(event:ChangeEvent<HTMLTextAreaElement>)=>{
+        SetMessageInput(event.target.value);
+    }
+    const handleSubmitButton=()=>{
+        console.log(nameInput+" , "+emailInput+" , "+messageInput)
+    }
     return (
         <Layout>
             <div className={styles.navbar}>
@@ -54,31 +70,108 @@ export default function Index() {
                             turn your vision into reality.
                         </p>
                     </div>
-                    <ProjectsList/>
+                    <div id="Projects" className={styles.projects}>
+                        <p className={styles.subtitle}>Projects</p>
+                        {/*<ProjectsList/>*/}
+                        <CustomList />
+                    </div>
+                    <div id="Contact" className={styles.contact}>
+                        <p className={styles.subtitle}>Contact Us</p>
+                        <div className={styles.contactData}>
+                            <p className={styles.text}>
+                            Hi Pixel-Campione Development, my name is <input type="text" placeholder="Enter your name" onChange={handleNameInputChange}/>,<br/>
+                            my contact email is <input type="email" placeholder="Enter your email address" onChange={handleEmailInputChange}/>, and I would like to
+                            </p>
+                            <textarea placeholder="Enter your message" onChange={handleMessageInputChange}></textarea>
+                        </div>
+                            <CreateSubmitButton name={nameInput} email={emailInput} message={messageInput} handler={handleSubmitButton}/>
+                    </div>
                 </div>
             </div>
         </Layout>
     )
 }
-
-
-function ProjectsList() {
-    const [data, setData] = useState([]);
-    const URL = "https://pixel-campione-portfolio-back-de4b8d98e131.herokuapp.com/";
-    console.log(URL);
-    useEffect(() => {
-        axios.get(URL+"projects/").then(response => setData(response.data)).catch(error => console.log(error))
-    })
-    return (
-        <div className={styles.projects}>
-            {data.map((project: Project) =>
-                <div key={project.id} className={styles.project}>
-                    <Image src={project.img} alt="projIco"></Image>
-                    <h2>{project.name}</h2>
-                    <p>{project.description}</p>
-                </div>
-            )}
-        </div>
-    )
+type Form ={
+    name:string;
+    email:string;
+    message:string;
+    handler:MouseEventHandler
 }
+function CreateSubmitButton({name,email,message,handler}:Form) {
+        if(name!=''&&email!=''&&message!=''){
+            return <button onClick={handler} className={styles.contactButton1}>Submit</button>
+        }
+     return <button className={styles.contactButton2}>Submit</button>
+}
+function CustomList(){
+    const projects: Project[]=[{
+        id:1,
+        name:"Project1",
+        description:"Description of the first project",
+        img:"/logo_transparent.png",
+        detailedDescription:"Details"
+    },
+        {
+            id:2,
+            name:"Project2",
+            description:"Description of the second project",
+            img:"/logo_transparent.png",
+            detailedDescription:"Details"
+        }];
+    return (
+         <div className={styles.projectList}>
+             {projects.map((project: Project) =>
+                 <div key={project.id}>
+                     <CreateProject project={project}/>
+                 </div>
+             )}
+         </div>
+     )
+}
+type ProjectProp={
+    project:Project;
+}
+function CreateProject({project}:ProjectProp){
+    const [opened,SetOpened] = useState(false);
+    const handleSetOpened=()=>{
+        SetOpened(!opened);
+    }
+    return (
+        /*TODO: Make the css for the p tag*/
+            <div className={styles.individualProject} onClick={handleSetOpened}>
+                <div className={styles.mainProjectData}>
+                    <Image src={project.img} alt="projIco" width="100" height="100" className={styles.projectImg}></Image>
+                    <div className={styles.projectMainData}>
+                        <p>{project.name}</p>
+                        <p>{project.description}</p>
+                    </div>
+                </div>
+                {opened&&
+                    <div className={styles.auxProjectData}>
+                        <p>{project.detailedDescription}</p>
+                    </div>
+                }
+            </div>
+        )
+}
+
+// function ProjectsList() {
+//     const [data, setData] = useState([]);
+//     const URL = "https://pixel-campione-portfolio-back-de4b8d98e131.herokuapp.com/";
+//     console.log(URL);
+//     useEffect(() => {
+//         axios.get(URL+"projects/").then(response => setData(response.data)).catch(error => console.log(error))
+//     })
+//     return (
+//         <div className={styles.projects}>
+//             {data.map((project: Project) =>
+//                 <div key={project.id} className={styles.project}>
+//                     <Image src={project.img} alt="projIco"></Image>
+//                     <h2>{project.name}</h2>
+//                     <p>{project.description}</p>
+//                 </div>
+//             )}
+//         </div>
+//     )
+// }
 

@@ -3,4 +3,5 @@ export type Project = {
     name: string;
     description: string;
     img: string
+    detailedDescription:string
 }
