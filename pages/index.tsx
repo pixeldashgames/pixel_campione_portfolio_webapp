@@ -72,8 +72,8 @@ export default function Index() {
                     </div>
                     <div id="Projects" className={styles.projects}>
                         <p className={styles.subtitle}>Projects</p>
-                        {/*<ProjectsList/>*/}
-                        <CustomList />
+                        <ProjectsList/>
+                        {/*<CustomList />*/}
                     </div>
                     <div id="Contact" className={styles.contact}>
                         <p className={styles.subtitle}>Contact Us</p>
@@ -155,23 +155,21 @@ function CreateProject({project}:ProjectProp){
         )
 }
 
-// function ProjectsList() {
-//     const [data, setData] = useState([]);
-//     const URL = "https://pixel-campione-portfolio-back-de4b8d98e131.herokuapp.com/";
-//     console.log(URL);
-//     useEffect(() => {
-//         axios.get(URL+"projects/").then(response => setData(response.data)).catch(error => console.log(error))
-//     })
-//     return (
-//         <div className={styles.projects}>
-//             {data.map((project: Project) =>
-//                 <div key={project.id} className={styles.project}>
-//                     <Image src={project.img} alt="projIco"></Image>
-//                     <h2>{project.name}</h2>
-//                     <p>{project.description}</p>
-//                 </div>
-//             )}
-//         </div>
-//     )
-// }
+function ProjectsList() {
+    const [data, setData] = useState([]);
+    const URL = "https://pixel-campione-portfolio-back-de4b8d98e131.herokuapp.com/";
+    console.log(URL);
+    useEffect(() => {
+        axios.get(URL+"projects/").then(response => setData(response.data)).catch(error => console.log(error))
+    })
+    return (
+        <div className={styles.projectList}>
+            {data.map((project: Project) =>
+                <div key={project.id}>
+                    <CreateProject project={project}/>
+                </div>
+            )}
+        </div>
+    )
+}
 
