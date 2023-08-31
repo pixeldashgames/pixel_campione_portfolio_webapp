@@ -116,6 +116,24 @@ function CreateSubmitButton({name,email,message,handler}:Form) {
      return <button className={styles.contactButton2}>Submit</button>
 }
 
+type TechDtoProp={
+    techArr:TechDto[]
+}
+function CreateTechStack({techArr}:TechDtoProp) {
+
+    return(
+        /*TODO:Change the css config for styles.tech*/
+        <div className={styles.tech}>
+            {techArr.map((tech:TechDto)=>
+                <div key={tech.id}>
+                    <a href={tech.referenceURL} target="_blank">
+                        <Image src={tech.image} alt={tech.name}></Image>
+                    </a>
+                </div>
+            )}
+        </div>
+    )
+}
 type ProjectProp={
     project:Project;
 }
@@ -137,6 +155,7 @@ function CreateProject({project}:ProjectProp){
                 {opened&&
                     <div className={styles.auxProjectData}>
                         <p>{project.detailedDescription}</p>
+                        <CreateTechStack techArr={project.techStack}/>
                     </div>
                 }
             </div>

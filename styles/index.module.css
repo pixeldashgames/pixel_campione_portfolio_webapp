@@ -192,3 +192,8 @@
 .contactData textarea::placeholder{
     color: black;
 }
+.stack{
+    display: flex;
+    align-items: center;
+    padding: 2vw;
+}

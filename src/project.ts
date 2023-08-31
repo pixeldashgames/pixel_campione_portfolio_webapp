@@ -4,4 +4,5 @@ export type Project = {
     description: string;
     img: string
     detailedDescription:string
+    techStack:TechDto[]
 }
