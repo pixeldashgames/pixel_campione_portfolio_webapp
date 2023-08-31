@@ -20,7 +20,19 @@ export default function Index() {
         SetMessageInput(event.target.value);
     }
     const handleSubmitButton=()=>{
-        console.log(nameInput+" , "+emailInput+" , "+messageInput)
+        const URL = "https://pixel-campione-portfolio-back-de4b8d98e131.herokuapp.com/";
+        const postData = async ()=>{
+            try{
+                const response = await axios.post(URL+'contact/',{
+                    name: nameInput,
+                    emailBody: messageInput,
+                    contactEmail: emailInput
+                })
+            }
+            catch (e) {
+                console.error(e);
+            }
+        }
     }
     return (
         <Layout>
@@ -103,31 +115,7 @@ function CreateSubmitButton({name,email,message,handler}:Form) {
         }
      return <button className={styles.contactButton2}>Submit</button>
 }
-function CustomList(){
-    const projects: Project[]=[{
-        id:1,
-        name:"Project1",
-        description:"Description of the first project",
-        img:"/logo_transparent.png",
-        detailedDescription:"Details"
-    },
-        {
-            id:2,
-            name:"Project2",
-            description:"Description of the second project",
-            img:"/logo_transparent.png",
-            detailedDescription:"Details"
-        }];
-    return (
-         <div className={styles.projectList}>
-             {projects.map((project: Project) =>
-                 <div key={project.id}>
-                     <CreateProject project={project}/>
-                 </div>
-             )}
-         </div>
-     )
-}
+
 type ProjectProp={
     project:Project;
 }
