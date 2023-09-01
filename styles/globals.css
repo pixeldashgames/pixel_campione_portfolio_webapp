@@ -8,6 +8,7 @@
   src: url("../fonts/Harabara.ttf") format("truetype");
 }
 
+
 :root {
   --max-width: 1920px;
   --border-radius: 12px;
@@ -15,8 +16,10 @@
   'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
   'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
   --font-titles: "Harabara", sans-serif;
-  --small-responsive-font-size: 3vw;
-  --small-font-size: 20px;
+  --40px-responsive: min(40px, 4vw);
+  --20px-responsive: min(20px, 2vw);
+  --small-font-size: min(3.25vw, 25px);
+  --subtitle-font-size: min(6vw, 50px);
   --primary-color: #0B3E4B;
   --secondary-color: #C9F2F9;
   --accent-color: #FFFFFF;

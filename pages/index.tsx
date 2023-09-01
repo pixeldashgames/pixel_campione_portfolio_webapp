@@ -1,3 +1,5 @@
+// noinspection HtmlUnknownAnchorTarget
+
 import React, {ChangeEvent, MouseEventHandler, useEffect, useState} from 'react';
 import styles from "../styles/index.module.css";
 import Layout from "../components/layout"
@@ -63,7 +65,7 @@ export default function Index() {
                         </p>
                     </div>
 
-                    <div id="About" className={styles.about}>
+                    <div id="About" className={styles.sectionTitle}>
                         <p className={styles.subtitle}>About Us</p>
                         <p className={`${styles.text} ${styles.aboutText}`}>
                             Welcome to Pixel-Campione Development,
@@ -82,17 +84,17 @@ export default function Index() {
                             turn your vision into reality.
                         </p>
                     </div>
-                    <div id="Projects" className={styles.projects}>
+                    <div id="Projects" className={styles.sectionTitle}>
                         <p className={styles.subtitle}>Projects</p>
                         <ProjectsList/>
                         {/*<CustomList />*/}
                     </div>
-                    <div id="Contact" className={styles.contact}>
+                    <div id="Contact" className={styles.sectionTitle}>
                         <p className={styles.subtitle}>Contact Us</p>
                         <div className={styles.contactData}>
-                            <p className={styles.text}>
+                            <p className={`${styles.text}`}>
                             Hi Pixel-Campione Development, my name is <input type="text" placeholder="Enter your name" onChange={handleNameInputChange}/>,<br/>
-                            my contact email is <input type="email" placeholder="Enter your email address" onChange={handleEmailInputChange}/>, and I would like to
+                            my contact email is <input type="email" placeholder="Enter your email" onChange={handleEmailInputChange}/>, and I would like to
                             </p>
                             <textarea placeholder="Enter your message" onChange={handleMessageInputChange}></textarea>
                         </div>
