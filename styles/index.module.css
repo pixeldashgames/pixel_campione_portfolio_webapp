@@ -8,13 +8,15 @@
     top: 0;
     width: 100%;
 }
+
 .navbarLinks {
     display: flex;
     margin-left: auto;
-    
+
     justify-content: space-around;
     list-style: none;
 }
+
 .navbarLinks a {
     font-weight: 325;
     font-family: var(--font-mono);
@@ -25,6 +27,7 @@
     padding-left: var(--40px-responsive);
     padding-right: var(--40px-responsive);
 }
+
 .navbarLinks a {
     font-size: min(3.25vw, 20px);
     margin-left: var(--20px-responsive);
@@ -63,6 +66,7 @@
 .home {
     padding-top: 20vw;
 }
+
 .mainTitle {
     font-family: var(--font-titles);
     font-size: min(12vw, 140px);
@@ -70,6 +74,7 @@
     line-height: 1.05;
     color: var(--accent-color);
 }
+
 .mainSubTitle {
     margin-top: 10px;
     font-family: var(--font-mono);
@@ -79,50 +84,97 @@
 }
 
 .sectionTitle {
-    margin-top: 8vw;
-    padding-top: 8vw;
-    margin-bottom: 8vw;
+    margin-top: 50px;
+    padding-top: 100px;
 }
 
-.individualProject{
+.individualProject {
     background-color: rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease-in-out;
-    margin: 20px 30vw 20px;
+    padding: 20px;
+    width: min(75vw, 700px);
+    margin: 20px auto;
     border-radius: 20px;
+    transition: scale 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
-.individualProject:hover{
-    background-color: rgba(0, 0, 0, 0.5);
+.individualProject:hover {
+    scale: 1.05;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: scale 0.1s ease-in-out, background-color 0.2s ease-in-out
 }
 
-.mainProjectData{
+.mainProjectData {
     display: flex;
-    align-items: center;
 }
 
-.auxProjectData{
+.auxProject {
     text-align: left;
     padding: 0.25vw 2vw 1vw;
 }
 
-.projectList{
+.projectList {
     margin-top: 50px;
 }
 
-.projectImg{
-    margin: 1vw 2vw 1vw 1vw;
+.projectImg {
+    margin: 1vw 3vw 1vw 1vw;
 }
 
 .projectMainData {
     text-align: left;
-    margin-top: 0.25vw;
     margin-bottom: 1vw;
-    margin-right: 2vw;
-}
-.projectAuxData{
 }
 
-.contactButton1{
+.projectTitle {
+    font-weight: 500;
+    color: var(--accent-color);
+}
+
+.projectDescription {
+    margin-top: 5px;
+    color: var(--secondary-color);
+    font-size: min(2.5vw, 20px);
+}
+
+.projectAuxData {
+    text-align: left;
+    padding: 10px 2vw;
+}
+
+.projectTechStackSubtitle {
+    margin-top: 30px;
+    text-align: center;
+    color: var(--accent-color);
+    font-size: min(2.25vw, 18px);
+}
+
+.techStackList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.techStackItem {
+    display: flex;
+    padding-top: 4px;
+    align-items: center;
+    margin: 5px 5px;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.techStackItem a {
+    margin: auto;
+}
+
+.techStackImage {
+    /*border-radius: 50%;*/
+}
+
+.contactButton1 {
     width: 35vw;
     height: min(6.5vw, 45px);
     font-family: var(--font-mono);
@@ -135,10 +187,12 @@
     background-color: rgba(0, 0, 0, 0.20);
     transition: background-color 0.3s ease-in-out;
 }
-.contactButton1:hover{
+
+.contactButton1:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
-.contactButton2{
+
+.contactButton2 {
     width: 35vw;
     height: min(6.5vw, 45px);
     font-family: var(--font-mono);
@@ -150,16 +204,19 @@
     border: none;
     outline: none;
 }
+
 .contactData {
     margin-top: 5vw;
     margin-bottom: 2vw;
 }
+
 .contactData p {
     line-height: 1.65;
     margin-left: 10%;
     margin-right: 10%;
 }
-.contactData input{
+
+.contactData input {
     text-align: left;
     padding-left: 2vw;
     background-color: rgba(0, 0, 0, 0.20);
@@ -174,14 +231,15 @@
     color: var(--accent-color);
 }
 
-.contactData input::placeholder{
+.contactData input::placeholder {
     color: var(--secondary-color);
 }
-.contactData textarea::placeholder{
+
+.contactData textarea::placeholder {
     color: var(--secondary-color);
 }
-.contactData textarea
-{
+
+.contactData textarea {
     margin-top: 2vw;
     background-color: rgba(0, 0, 0, 0.20);
     width: 80%;
@@ -195,7 +253,7 @@
     margin-right: 10%;
 }
 
-.stack{
+.stack {
     display: flex;
     align-items: center;
     padding: 2vw;
