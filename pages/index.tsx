@@ -176,7 +176,7 @@ function CreateProject({project}: ProjectProp) {
 }
 
 function ProjectsList() {
-  const [data, setData] = useState(projectSeed);
+  const [data, setData] = useState([]);
   const URL = "https://pixel-campione-portfolio-back-de4b8d98e131.herokuapp.com/";
   console.log(URL);
   useEffect(() => {

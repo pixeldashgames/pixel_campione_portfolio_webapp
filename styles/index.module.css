@@ -92,7 +92,7 @@
     background-color: rgba(0, 0, 0, 0.3);
     padding: 20px;
     width: min(75vw, 700px);
-    margin: 20px auto;
+    margin: 40px auto;
     border-radius: 20px;
     transition: scale 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
