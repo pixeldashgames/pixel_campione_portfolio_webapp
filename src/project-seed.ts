@@ -5,51 +5,51 @@ export const projectSeed: Project[] = [{
   name: 'Project 1',
   description: 'This is a project',
   detailedDescription: 'This is a detailed description',
-  img: "/test.png",
+  image: "/test.png",
   techStack: [{
     id: 1,
     name: 'google',
-    referenceURL: 'https://www.google.com/',
+    referenceUrl: 'https://www.google.com/',
     image: '/google.png'
   }, {
     id: 2,
     name: 'google',
-    referenceURL: 'https://www.google.com/',
+    referenceUrl: 'https://www.google.com/',
     image: '/google.png'
   }, {
     id: 3,
     name: 'google',
-    referenceURL: 'https://www.google.com/',
+    referenceUrl: 'https://www.google.com/',
     image: '/nestjs.png'
   }, {
     id: 1,
     name: 'google',
-    referenceURL: 'https://www.google.com/',
+    referenceUrl: 'https://www.google.com/',
     image: '/google.png'
   }, {
     id: 2,
     name: 'google',
-    referenceURL: 'https://www.google.com/',
+    referenceUrl: 'https://www.google.com/',
     image: '/google.png'
   }, {
     id: 3,
     name: 'google',
-    referenceURL: 'https://www.google.com/',
+    referenceUrl: 'https://www.google.com/',
     image: '/google.png'
   }, {
     id: 1,
     name: 'google',
-    referenceURL: 'https://www.google.com/',
+    referenceUrl: 'https://www.google.com/',
     image: '/google.png'
   }, {
     id: 2,
     name: 'google',
-    referenceURL: 'https://www.google.com/',
+    referenceUrl: 'https://www.google.com/',
     image: '/google.png'
   }, {
     id: 3,
     name: 'google',
-    referenceURL: 'https://www.google.com/',
+    referenceUrl: 'https://www.google.com/',
     image: '/google.png'
   }],
 }, {
@@ -57,21 +57,21 @@ export const projectSeed: Project[] = [{
   name: 'Project 2',
   description: 'This is another project',
   detailedDescription: 'This is another detailed description',
-  img: "/test.png",
+  image: "/test.png",
   techStack: [{
     id: 1,
     name: 'google',
-    referenceURL: 'google.com',
+    referenceUrl: 'google.com',
     image: '/google.png'
   }, {
     id: 2,
     name: 'google',
-    referenceURL: 'google.com',
+    referenceUrl: 'google.com',
     image: '/google.png'
   }, {
     id: 3,
     name: 'google',
-    referenceURL: 'google.com',
+    referenceUrl: 'google.com',
     image: '/google.png'
   }],
 }]; 

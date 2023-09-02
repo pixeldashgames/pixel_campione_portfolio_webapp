@@ -1,6 +1,6 @@
 // noinspection HtmlUnknownAnchorTarget
 
-import React, {ChangeEvent, MouseEventHandler, useEffect, useRef, useState} from 'react';
+import React, {ChangeEvent, MouseEventHandler, useEffect, useState} from 'react';
 import styles from "../styles/index.module.css";
 import Layout from "../components/layout"
 import Image from "next/image";
@@ -82,7 +82,6 @@ export default function Index() {
           <div id="Projects" className={styles.sectionTitle}>
             <p className={styles.subtitle}>Projects</p>
             <ProjectsList/>
-            {/*<CustomList />*/}
           </div>
           <div id="Contact" className={styles.sectionTitle}>
             <p className={styles.subtitle}>Contact Us</p>
@@ -122,13 +121,16 @@ type TechDtoProp = {
 }
 
 function CreateTechStack({techArr}: TechDtoProp) {
+  // @ts-ignore
+  const onClick = event => {
+    event.stopPropagation();
+  }
 
   return (
-    /*TODO:Change the css config for styles.tech*/
     <div className={styles.techStackList}>
       {techArr.map((tech: TechDto) =>
         <div key={tech.id} className={styles.techStackItem}>
-          <a href={tech.referenceURL} target="_blank">
+          <a href={tech.referenceUrl} target="_blank" onClick={onClick}>
             <Image className={styles.techStackImage} src={tech.image} width={28} height={28} alt={tech.name}/>
           </a>
         </div>
@@ -151,7 +153,7 @@ function CreateProject({project}: ProjectProp) {
   return <div className={`${styles.individualProject} 
     ${opened ? 'projectOpened' : ''}`} onClick={handleDivClick}>
     <div className={styles.mainProjectData}>
-      <Image src={project.img} alt="projIco" width={100} height={100}
+      <Image src={project.image} alt="projIco" width={100} height={100}
              className={styles.projectImg}/>
       <div className={styles.projectMainData}>
         <p className={`${styles.projectTitle} ${styles.text}`}>
@@ -169,6 +171,7 @@ function CreateProject({project}: ProjectProp) {
             <CreateTechStack techArr={project.techStack}/>
         </div>
     }
+    <p className={styles.projectClickPrompt}>Click to {opened ? "close" : "open"}</p>
   </div>;
 }
 

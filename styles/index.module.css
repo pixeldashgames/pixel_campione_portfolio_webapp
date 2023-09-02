@@ -148,6 +148,15 @@
     font-size: min(2.25vw, 18px);
 }
 
+.projectClickPrompt {
+    margin-top: 10px;
+    font-family: var(--font-mono);
+    font-size: min(2.25vw, 18px);
+    font-weight: 300;
+    font-style: italic;
+    color: rgb(150, 150, 150);
+}
+
 .techStackList {
     display: flex;
     flex-wrap: wrap;

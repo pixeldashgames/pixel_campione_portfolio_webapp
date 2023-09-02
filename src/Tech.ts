@@ -1,6 +1,6 @@
-type TechDto={
-    id:number,
-    name:string,
-    referenceURL:string,
-    image: string
+type TechDto = {
+  id: number,
+  name: string,
+  referenceUrl: string,
+  image: string
 }

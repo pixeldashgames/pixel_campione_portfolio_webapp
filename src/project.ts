@@ -1,8 +1,8 @@
 export type Project = {
-    id: number;
-    name: string;
-    description: string;
-    img: string
-    detailedDescription:string
-    techStack:TechDto[]
+  id: number;
+  name: string;
+  description: string;
+  image: string
+  detailedDescription: string
+  techStack: TechDto[]
 }
