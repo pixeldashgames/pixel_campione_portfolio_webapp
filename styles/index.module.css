@@ -83,9 +83,18 @@
     color: var(--secondary-color);
 }
 
+.background {
+    padding-bottom: 200px;
+}
+
 .sectionTitle {
     margin-top: 50px;
     padding-top: 100px;
+}
+
+.thanksContactText {
+    margin-top: 100px;
+    margin-bottom: 400px;
 }
 
 .individualProject {

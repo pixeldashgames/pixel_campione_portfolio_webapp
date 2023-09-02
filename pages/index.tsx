@@ -12,6 +12,7 @@ export default function Index() {
   const [nameInput, SetNameInput] = useState('');
   const [emailInput, SetEmailInput] = useState('');
   const [messageInput, SetMessageInput] = useState('');
+  const [sentEmail, SendEmail] = useState(false);
 
   const handleNameInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     SetNameInput(event.target.value);
@@ -23,6 +24,7 @@ export default function Index() {
     SetMessageInput(event.target.value);
   }
   const handleSubmitButton = async () => {
+    SendEmail(true);
     const URL = "https://pixel-campione-portfolio-back-de4b8d98e131.herokuapp.com/";
     await axios.post(URL + 'contact', {
       name: nameInput,
@@ -59,7 +61,6 @@ export default function Index() {
               Full-Stack Web Development
             </p>
           </div>
-
           <div id="About" className={styles.sectionTitle}>
             <p className={styles.subtitle}>About Us</p>
             <p className={`${styles.text} ${styles.aboutText}`}>
@@ -85,17 +86,22 @@ export default function Index() {
           </div>
           <div id="Contact" className={styles.sectionTitle}>
             <p className={styles.subtitle}>Contact Us</p>
-            <div className={styles.contactData}>
-              <p className={`${styles.text}`}>
-                Hi Pixel-Campione Development, my name is <input type="text" placeholder="Enter your name"
-                                                                 onChange={handleNameInputChange}/>,<br/>
-                my contact email is <input type="email" placeholder="Enter your email"
-                                           onChange={handleEmailInputChange}/>, and I would like to
-              </p>
-              <textarea placeholder="Enter your message" onChange={handleMessageInputChange}></textarea>
-            </div>
-            <CreateSubmitButton name={nameInput} email={emailInput} message={messageInput}
-                                handler={handleSubmitButton}/>
+            {!sentEmail ?
+              <>
+                <div className={styles.contactData}>
+                  <p className={`${styles.text}`}>
+                    Hi Pixel-Campione Development, my name is <input type="text" placeholder="Enter your name"
+                                                                     onChange={handleNameInputChange}/>,<br/>
+                    my contact email is <input type="email" placeholder="Enter your email"
+                                               onChange={handleEmailInputChange}/>, and I would like to
+                  </p>
+                  <textarea placeholder="Enter your message" onChange={handleMessageInputChange}></textarea>
+                </div>
+                <CreateSubmitButton name={nameInput} email={emailInput} message={messageInput}
+                                    handler={handleSubmitButton}/>
+              </> :
+              <p className={`${styles.text} ${styles.thanksContactText}`}>Thanks for contacting us!<br/>We'll get back
+                to you as soon as possible.</p>}
           </div>
         </div>
       </div>
